@@ -1,0 +1,88 @@
+Data collection is an Art ! But data cleansing is an architecture. 
+The data which is available comes with an untidy form which cannot able to deliver the information correctly. To analyse or to find solution for machine learning problems ultimately we have to clean the data where most of the time has been spent by data scientiest.
+
+
+Common problems with data are:
+1] Missing Values 	--> Needs to identify it's volume.
+2] Outliers		--> Can cause potential problem.
+3] Duplicates 		--> Can bias the result.
+4] Data type mismatch 	--> Should convert into same type.
+
+Does the data cleansing have any steps to follow with? 
+
+Yes! Here we go !! 
+Here we will use job_application_fillings from NYC open data as an example, source: https://data.cityofnewyork.us/Housing-Development/DOB-Job-Application-Filings/ic3t-wcy2
+
+
+Data means --> Dirty, Devil or Devine.
+
+Is data cleansing a difficult task to do. No! the mantra is just "Make it simple and do it perfect".
+
+Data Story: To fall in love with DATA.
+“Data collection is an Art ; But data cleansing is an Architecture (Science)”. 
+
+When am started doing data science, my thoughts are: DATA means --> Dirty & Devil. After I learnt to deal with, Data means --> Devine. It is heavenly joyful to play with it after cleansing.
+
+Data Scientist are devoted most of their time to clean the data. Because data never comes in a way that directly we can use it for analysis, isn't wonderful if it comes clean !. Yes, it is common to have issues with data, the files may not parsed properly, there could be strange characters in a field, may have duplicate records. As we start digging into data, we may come across different kind of issues. Data cleansing drive us to build successfull analysis and has interesting stories to look into it.
+
+Reasons why the data is Dirty :
+
+1] Duplicates → Can bias the result.
+2] Data type mismatch → Should convert into same type.
+3] Outliers → Can cause potential problem.
+4] Missing Values → Needs to identify it’s volume.
+ 
+
+But most of us are not aware of how to play with. Do the data cleansing have any rule to play with our data?
+
+Yes, Will give you the rules in conclusion !!
+	
+Exploring data.
+
+Pandas - a well known magician (python library) to make our data beautiful.
+Anaconda - a good stage to play data science.
+
+Here we explore sample data to diagnosing the above problems. Above points are the steps to follow to deal with our dirty data. Load the raw data and take a look at head and tail of our data frame for initial understanding. Some data frames come with predefined column names, otherwise we have to rename it for reference. 
+import pandas as pd
+import numpy as np
+file_path = "/home/Downloads/DOB_Job_Application_Filings.csv" 
+data_1 = pd.read_csv(file_path,header=None)
+
+
+1]. Duplicates handling:
+ There are numerous way the duplicates can occur in our data. Depends upon the population of duplicates the particular values or category will become the powerfull solution driven element in analysis. In pandas we have the pd.drop_duplicates() function to remove duplicates, where the entire row value have its replication. It will not remove if any of the column have different values in the row including 'NaN'.
+
+
+2]. Data type miss match:
+	The type of the datas in the columns need not be the same though it has to hold different kind of values while collection. But the mixed type of data format cannot be taken into analysis where the integer and float values will give different results in math functions. In some cases the string values should be transformed into meaningfull numeric values. For example : Female - Male, Proffit - Loss. Some times the numeric value comes with added string element to represent its true value. For example : 20$, Rs.20, 3-Million, 3-Billion. The above kind of data type are needs to convert into required data format.
+
+
+3]. Outliers:
+  The outliers will give us the wrong statistics information about our data. For eample it will give the notable difference in mean and median of our numeric values. Though while setting up the threshold value or filling up the missing values with mean the outliers has to be ommited.
+
+
+4.] Missing Values:
+	While collecting the data there is very much possibility to missing values in some or more categories which is acceptable. When the volume of missing values are less we can populate with mean or median values to get better result. But when the volume of missing values are huge it cannot be manipulate with any other values. Though we have to decide the importance of the particular column or some cases it should be completely ignore for better analysis. In pandas the empty spaces are not treated as NaN values which has to be find out with regular expressions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
